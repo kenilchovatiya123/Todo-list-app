@@ -44,19 +44,23 @@ const Todo = () => {
     localStorage.setItem("todos", JSON.stringify(todoList))
   }, [todoList])
 
-
-
   return (
-    <div className='bg-white place-self-center mt-8 p-8 flex flex-col min-h-[400px] rounded-lg shadow-xl max-w-md'>
-      <div className='flex items-center bg-slate-200 rounded-lg'>
-        <input ref={inputRef} type="text" placeholder='Add your tasks' className='bg-transparent border-0 outline-none flex-1 h-14 pl-6 pr-2 text-gray-600 shadow-inner placeholder:text-blue-900 text-[16px] font-semibold capitalize' />
-        <button onClick={add} className='border-none outline-none rounded-lg h-14 w-32 bg-blue-900 text-white font-medium text-[20px] cursor-pointer transition duration-200 hover:bg-blue-800'>ADD</button>
-      </div>
-
-      <div>
-        {todoList.map((item, index) => {
-          return <TodoItem key={index} text={item.text} id={item.id} isComplete={item.isComplete} deleteTodo={deleteTodo} toggle={toggle} />
-        })}
+    <div className='bg-neutral-100 h-screen'>
+      <div className='items-center justify-center flex flex-col'>
+        <div className='bg-gray-200 text-black w-full sm:w-[460px] flex items-center justify-start py-6 px-8 gap-1 sm:gap-2 rounded-md'>
+          <img src="/src/assets/checklist.png" alt="" className='h-6 sm:h-7' />
+        </div>
+        <div className='bg-gray-200 text-black w-full sm:w-[460px] flex mt-2 items-center justify-between py-6 px-8 gap-1 rounded-md'>
+          <div className='flex items-center w-full'>
+            <input ref={inputRef} type="text" placeholder='Add your tasks' className='w-full flex-1 py-2 px-3 text-[14px] sm:text-[16px] outline-none' />
+            <button onClick={add} className='bg-neutral-800 py-2 px-6 sm:px-8 text-white text-[14px] sm:text-[16px]'>ADD</button>
+          </div>
+        </div>
+        <div>
+          {todoList.map((item, index) => {
+            return <TodoItem key={index} text={item.text} id={item.id} isComplete={item.isComplete} deleteTodo={deleteTodo} toggle={toggle} />
+          })}
+        </div>
       </div>
     </div>
   )
