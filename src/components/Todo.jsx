@@ -49,6 +49,7 @@ const Todo = () => {
       <div className='items-center justify-center flex flex-col'>
         <div className='bg-gray-200 text-black w-full sm:w-[460px] flex items-center justify-start py-6 px-8 gap-1 sm:gap-2 rounded-md'>
           <img src="/src/assets/checklist.png" alt="" className='h-6 sm:h-7' />
+          <h1 className='sm:text-2xl text-lg font-bold tracking-tight'>Task Tracker</h1>
         </div>
         <div className='bg-gray-200 text-black w-full sm:w-[460px] flex mt-2 items-center justify-between py-6 px-8 gap-1 rounded-md'>
           <div className='flex items-center w-full'>
